@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import * as Dialog from '@radix-ui/react-dialog'
+import * as RadioGroup from '@radix-ui/react-radio-group'
 
 interface TransactionTypeButtonProps{
     variant: 'income' | 'outcome';
@@ -77,7 +78,7 @@ export const CloseButton = styled(Dialog.Close)`
 
 `;
 
-export const TransactionType = styled.div`
+export const TransactionType = styled(RadioGroup.Root)`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -85,7 +86,7 @@ export const TransactionType = styled.div`
 
 `;
 
-export const TransactionTypeButton = styled.button<TransactionTypeButtonProps>`
+export const TransactionTypeButton = styled(RadioGroup.Item)<TransactionTypeButtonProps>`
     background: ${props => props.theme["gray-700"]};
     padding: 1rem;
     display: flex;
